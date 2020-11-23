@@ -4,7 +4,7 @@ import CartItem from './CartItem';
 import { useGlobalContext } from './context';
 
 const CartContainer = () => {
-  const { cart, total } = useGlobalContext();
+  const { cart, total, clearCart } = useGlobalContext();
   if (cart.length === 0) {
     return (
       <section className='cart'>
@@ -39,7 +39,7 @@ const CartContainer = () => {
         </div>
         <button
           className='btn clear-btn'
-          onClick={() => console.log('clear cart')}
+          onClick={clearCart}
           title='Clear cart'
         >
           clear cart
